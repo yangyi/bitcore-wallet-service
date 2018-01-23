@@ -21,7 +21,7 @@ var config = {
 
   storageOpts: {
     mongoDb: {
-      uri: 'mongodb://localhost:27017/bws',
+      uri: 'mongodb://mongodb:27017/bws',
     },
   },
   lockOpts: {
@@ -58,14 +58,14 @@ var config = {
       },
     },
   },
-  pushNotificationsOpts: {
-    templatePath: './lib/templates',
-    defaultLanguage: 'en',
-    defaultUnit: 'btc',
-    subjectPrefix: '',
-    pushServerUrl: 'https://fcm.googleapis.com/fcm',
-    authorizationKey: '',
-  },
+  // pushNotificationsOpts: {
+  //   templatePath: './lib/templates',
+  //   defaultLanguage: 'en',
+  //   defaultUnit: 'btc',
+  //   subjectPrefix: '',
+  //   pushServerUrl: 'https://fcm.googleapis.com/fcm',
+  //   authorizationKey: '',
+  // },
   fiatRateServiceOpts: {
     defaultProvider: 'BitPay',
     fetchInterval: 60, // in minutes
