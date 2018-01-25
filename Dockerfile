@@ -13,4 +13,4 @@ RUN wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSI
 
 EXPOSE 3232
 
-CMD dockerize -stdout /code/logs/bws.log npm start; bash
+CMD node app.js
