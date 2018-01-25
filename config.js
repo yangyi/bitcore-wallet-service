@@ -54,37 +54,41 @@ var config = {
     bch: {
       livenet: {
         provider: 'insight',
-        url: 'https://cashexplorer.bitcoin.com',
+        url: 'https://bch-insight.bitpay.com',
+      },
+      testnet: {
+        provider: 'insight',
+        url: 'https://test-bch-insight.bitpay.com/',
       },
     },
   },
-  // pushNotificationsOpts: {
-  //   templatePath: './lib/templates',
-  //   defaultLanguage: 'en',
-  //   defaultUnit: 'btc',
-  //   subjectPrefix: '',
-  //   pushServerUrl: 'https://fcm.googleapis.com/fcm',
-  //   authorizationKey: '',
-  // },
+  pushNotificationsOpts: {
+    templatePath: './lib/templates',
+    defaultLanguage: 'en',
+    defaultUnit: 'btc',
+    subjectPrefix: '',
+    pushServerUrl: 'https://fcm.googleapis.com/fcm',
+    authorizationKey: '',
+  },
   fiatRateServiceOpts: {
     defaultProvider: 'BitPay',
     fetchInterval: 60, // in minutes
   },
   // To use email notifications uncomment this:
-  // emailOpts: {
-  //  host: 'localhost',
-  //  port: 25,
-  //  ignoreTLS: true,
-  //  subjectPrefix: '[Wallet Service]',
-  //  from: 'wallet-service@bitcore.io',
-  //  templatePath: './lib/templates',
-  //  defaultLanguage: 'en',
-  //  defaultUnit: 'btc',
-  //  publicTxUrlTemplate: {
-  //    livenet: 'https://insight.bitpay.com/tx/{{txid}}',
-  //    testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
-  //  },
-  //},
+  emailOpts: {
+   host: 'localhost',
+   port: 25,
+   ignoreTLS: true,
+   subjectPrefix: '[Wallet Service]',
+   from: 'wallet-service@bitcore.io',
+   templatePath: './lib/templates',
+   defaultLanguage: 'en',
+   defaultUnit: 'btc',
+   publicTxUrlTemplate: {
+     livenet: 'https://insight.bitpay.com/tx/{{txid}}',
+     testnet: 'https://test-insight.bitpay.com/tx/{{txid}}',
+   },
+  },
   //
   // To use sendgrid:
   // var sgTransport = require('nodemail-sendgrid-transport');
