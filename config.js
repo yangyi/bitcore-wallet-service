@@ -56,10 +56,6 @@ var config = {
         provider: 'insight',
         url: 'https://bch-insight.bitpay.com',
       },
-      testnet: {
-        provider: 'insight',
-        url: 'https://test-bch-insight.bitpay.com/',
-      },
     },
   },
   pushNotificationsOpts: {
