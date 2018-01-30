@@ -21,3 +21,15 @@ services:
     command: "node app.js"
     depends_on:
       - 'mongodb'
+  mongobackup:
+    image: "istepanov/mongodump:3.4"
+    volumes:
+      - ./data/backup:/backup
+    environment:
+      CRON_SCHEDULE: '0 */1 * * *'
+      MONGO_HOST: mongodb
+      MONGO_PORT: 27017
+    entrypoint: bash -c '/backup.sh && /start.sh'
+    depends_on:
+      - mongodb
+    
