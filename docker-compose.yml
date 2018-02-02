@@ -7,7 +7,7 @@ services:
       - MONGO_DATA_DIR=/data/db
       - MONGO_LOG_DIR=/dev/null
     volumes:
-      - ./data/db:/data/db
+      - ${MONGO_VOLUME:-./data}/db:/data/db
     ports:
       - 27017:27017
     command: mongod --smallfiles --logpath=/dev/null # --quiet
@@ -24,7 +24,7 @@ services:
   mongobackup:
     image: "istepanov/mongodump:3.4"
     volumes:
-      - ./data/backup:/backup
+      - ${MONGO_VOLUME:-./data}/backup:/backup
     environment:
       CRON_SCHEDULE: '0 */1 * * *'
       MONGO_HOST: mongodb
