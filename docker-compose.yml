@@ -19,6 +19,8 @@ services:
     stdin_open: true
     tty: true
     command: "node app.js"
+    environment: 
+      - MONGO_URL=${MONGO_URL}
     depends_on:
       - 'mongodb'
   mongobackup:

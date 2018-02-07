@@ -1,3 +1,7 @@
+var process = require('process')
+
+var mongoURL = process.env.MONGO_URL || 'mongodb://mongodb:27017/bws'
+
 var config = {
   basePath: '/bws/api',
   disableLogs: false,
@@ -21,7 +25,7 @@ var config = {
 
   storageOpts: {
     mongoDb: {
-      uri: 'mongodb://mongodb:27017/bws',
+      uri: mongoURL,
     },
   },
   lockOpts: {
