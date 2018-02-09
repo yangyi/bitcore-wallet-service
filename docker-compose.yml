@@ -4,10 +4,10 @@ services:
     image: node:latest
     container_name: "bws"
     volumes:
-      - .:/app/bws
-    working_dir: /app/bws
+      - .:/code
+    working_dir: /code
     ports:
       - ${PORT:-3232}:3232
-    command: "npm run app"
+    command: bash -c 'npm install; node app.js'
     environment: 
       - MONGO_URL=${MONGO_URL:-mongodb://218.168.168.150:27017}
