@@ -9,5 +9,6 @@ services:
     ports:
       - ${PORT:-3232}:3232
     command: bash -c 'npm install; node app.js'
+    restart: always
     environment: 
       - MONGO_URL=${MONGO_URL:-mongodb://218.168.168.150:27017}
